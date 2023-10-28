@@ -24,7 +24,7 @@ export default async function Home() {
       {/* col-span-6 => faz ocupar 6 colunas */}
       <Link
         href={`/product/${highlightedProduct.slug}`}
-        className="relative group col-span-6 row-span-6 rounded-lg bg-zinc-900 overflow-hidden mx-auto"
+        className="relative group col-span-6 row-span-6 rounded-lg bg-zinc-900 overflow-hidden flex justify-center"
       >
         <Image
           src={highlightedProduct.image}
