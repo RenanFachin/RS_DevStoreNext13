@@ -32,6 +32,24 @@ export async function generateMetadata({
   }
 }
 
+export async function generateStaticParams() {
+  // retornando os produtos em destaque que estão na home e repassando para o slug
+  // const response = await api('/products/featured')
+  // const products: Product[] = await response.json()
+
+  // array de objetos contendo os parâmetros que desejamos cachear durante a build
+
+  // O conteúdo destes objetos são todos os conteúdos de slug possíveis que queremos gerar de maneira estática
+  return [{ slug: 'moletom-never-stop-learning' }]
+
+  // Fazendo o .map() dos produtos em destaques recebidos pela chamaeda para api
+  // return products.map((product) => {
+  //   return {
+  //     slug: product.slug,
+  //   }
+  // })
+}
+
 export default async function ProductPage({ params }: ProductProps) {
   const product = await getProduct(params.slug)
 
