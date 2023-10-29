@@ -82,7 +82,6 @@ export default async function Search() {
           />
 
           <div className="absolute bottom-10 right-10 h-12 flex items-center gap-2 max-w-[280px] rounded-full border-2 border-zinc-500 bg-black/60 p-1 pl-5">
-            {/* truncate => caso não couber, será adicionado ... */}
             <span className="text-sm truncate">
               Moletom Never Stop Learning
             </span>
