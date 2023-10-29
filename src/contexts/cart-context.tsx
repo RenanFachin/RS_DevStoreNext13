@@ -7,7 +7,7 @@ import { ReactNode, createContext, useState } from 'react'
 
 // Criando uma interface para representar o conteúdo dos items
 interface CartItem {
-  productId: string
+  productId: number
   quantity: number
 }
 
@@ -15,7 +15,7 @@ interface CartContextType {
   // Dizendo que é um array de items
   items: CartItem[]
   // Função para adicionar um produto ao carrinho
-  addToCart: (productId: string) => void
+  addToCart: (productId: number) => void
 }
 
 export const CartContext = createContext({} as CartContextType)
@@ -28,7 +28,7 @@ export function CartProvider({ children }: CartProviderProps) {
   // Criando um state para armazenar o conteúdo do carrinho e definindo a tipagem aceita
   const [cartItems, setCartItem] = useState<CartItem[]>([])
 
-  function addToCart(productId: string) {
+  function addToCart(productId: number) {
     setCartItem((state) => {
       // Validando as informações já contidas no state
       const productInCart = state.some((item) => item.productId === productId)
