@@ -34,8 +34,7 @@ describe('add product to cart', () => {
   })
 
   it('should be able to search for a product and add it to cart', () => {
-    // Buscando por um produto digitando na barra de pesquisa
-    cy.get('input[name=q]').type('moletom').parent('form').submit()
+    cy.searchByQuery('moletom')
 
     // Clicando no primeiro produto que ele encontrar
     cy.get('a[href^="/product"]').first().click()
